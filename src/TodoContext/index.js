@@ -17,6 +17,8 @@ function TodoProvider(props) {
         error,
     } = useLocalStorage(STORAGE_NAME, []);
     const [searchValue, setSearchValue] = React.useState('');
+    // estado del modal
+    const [openModal, setOpenModal] = React.useState(false)
 
     const completedTodos = todos.filter(todo => todo.completed).length;
     const totalTodos = todos.length
@@ -55,6 +57,17 @@ function TodoProvider(props) {
         saveTodos(newTodos)
     };
 
+    // codigo para crear todos
+    const addTodo = (text) => {
+        const newTodos = [...todos] // ... - operación de propagación
+        newTodos.push({
+            text,
+            completed: false,
+        });
+        // ejecutamos el re-render
+        saveTodos(newTodos)
+    };
+
     return (
         <TodoContext.Provider value={{
             loading,
@@ -66,6 +79,9 @@ function TodoProvider(props) {
             setSearchValue,
             completeTodos,
             deleteTodos,
+            openModal,
+            setOpenModal,
+            addTodo,
         }}>
             {props.children}
         </TodoContext.Provider>
