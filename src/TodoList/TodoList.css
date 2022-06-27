@@ -1,0 +1,25 @@
+.todo-section{
+    max-height: 75vh;
+    overflow-y: scroll;
+}
+
+.todo-section::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.todo-section::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.todo-section::-webkit-scrollbar-thumb {
+    background-color: var(--clr-blue);
+    border-radius: 20px;
+}
+
+.todo-section::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */

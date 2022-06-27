@@ -60,8 +60,12 @@ function TodoProvider(props) {
     // codigo para crear todos
     const addTodo = (text) => {
         const newTodos = [...todos] // ... - operación de propagación
+        // get time
+        const time = new Date
+        const timestr = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
         newTodos.push({
             text,
+            time: timestr,
             completed: false,
         });
         // ejecutamos el re-render

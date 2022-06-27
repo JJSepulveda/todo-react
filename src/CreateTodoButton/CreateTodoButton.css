@@ -1,4 +1,4 @@
-.create-button{
+/* .create-button{
     position: relative;
     border-radius: 50%;
     border: none;
@@ -6,3 +6,34 @@
     background-color: aqua;
     z-index: 2;
 }
+ */
+.btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .btn--large {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .btn--rounded {
+    background-color: var(--clr-orange);
+    border-radius: 50%;
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+  }
+
+  .create-button {
+    display: flex;
+    place-items: center;
+    place-content: center;
+    text-align: center;
+    margin: var(--metric-box-spacing) auto;
+
+  }
+  

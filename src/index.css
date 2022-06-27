@@ -1,3 +1,25 @@
+:root {
+  --metric-box-spacing: 0.7rem;
+
+  --clr-off-white: #fff;
+  --clr-orange: #ffa43a;
+  --clr-orange-2: #ffbf75;
+  --clr-blue: #759eff;
+  --clr-blue-2: #75c7ff;
+  --clr-black: #525558;
+  --clr-black-c: #a6adb4;
+
+  --font-family-titles: 'Open sans', sans-serif;
+  --font-family-text: 'Roboto', sans-serif;
+  --font-weight-title1: 800;
+  --font-weight-title2: 700;
+  --font-weight-text1: 400;
+  --font-weight-text2: 500;
+
+  --font-size-small: 0.8rem;
+  --font-size-medium: 1rem;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +27,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  min-height: 100vh;
+  line-height: 1.6;
+  font-family: var(--font-family-text);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255,164,58,1) 0%, rgba(255,255,255,1) 21%);
 }
 
 code {

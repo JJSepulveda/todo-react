@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.info-text {
+  color: var(--clr-black);
+  font-family: var(--font-family-text);
+  text-align: center;
+}

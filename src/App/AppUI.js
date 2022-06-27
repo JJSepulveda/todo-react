@@ -8,12 +8,18 @@ import { TodoList } from '../TodoList';
 import { TodoSearch } from '../TodoSearch';
 import { CreateTodoButton } from '../CreateTodoButton';
 
+import { TodoError } from '../TodoError';
+import { TodoLoading } from '../TodoLoading';
+import { EmptyTodo } from '../EmptyTodo/inex';
+
 // context
 import { TodoContext } from '../TodoContext';
 
 // Modal
 import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm'
+
+import "./App.css"
 
 
 function AppUI() {
@@ -27,22 +33,22 @@ function AppUI() {
     setOpenModal,
   } = React.useContext(TodoContext)
 
-  console.log(serachedTodos)
-
   return (
     <React.Fragment>
       <TodoCounter />
       <TodoSearch />
 
       <TodoList>
-        {loading && <p>keep and calm and wait we are loading. </p>}
-        {error && <p>Hubo un error... NOo!</p>}
-        {(!loading && !serachedTodos.length) && <p>Crea tu primer todo</p>}
+        {loading && <TodoLoading />}
+        {error && <TodoError />}
+        {(!loading && !serachedTodos.length) && <EmptyTodo />}
 
         {serachedTodos.map(todo => (
           <TodoItem
             key={todo.text}
             text={todo.text}
+            completed={todo.completed}
+            time={todo.time}
             onComplete={() => completeTodos(todo.text)}
             onDelete={() => deleteTodos(todo.text)}
           />
