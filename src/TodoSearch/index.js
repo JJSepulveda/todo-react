@@ -1,13 +1,8 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
 
 import "./TodoSearch.css"
 
-function TodoSearch() {
-    const { 
-        searchValue, 
-        setSearchValue 
-    } = React.useContext(TodoContext)
+function TodoSearch({ searchValue, setSearchValue }) {
 
     // event es una variable de javascript que
     // almacena lo que hace el usuario.

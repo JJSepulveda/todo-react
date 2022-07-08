@@ -6,9 +6,7 @@ import { useLocalStorage } from './useLocalStorage';
 
 const STORAGE_NAME = 'TODOS_V1';
 
-const TodoContext = React.createContext();
-
-function TodoProvider(props) {
+function useTodos() {
     // codigo para buscar todos
     const {
         item: todos, 
@@ -72,24 +70,20 @@ function TodoProvider(props) {
         saveTodos(newTodos)
     };
 
-    return (
-        <TodoContext.Provider value={{
-            loading,
-            error,
-            totalTodos,
-            completedTodos,
-            searchValue,
-            serachedTodos,
-            setSearchValue,
-            completeTodos,
-            deleteTodos,
-            openModal,
-            setOpenModal,
-            addTodo,
-        }}>
-            {props.children}
-        </TodoContext.Provider>
-    );
+    return ({
+        loading,
+        error,
+        totalTodos,
+        completedTodos,
+        searchValue,
+        serachedTodos,
+        setSearchValue,
+        completeTodos,
+        deleteTodos,
+        openModal,
+        setOpenModal,
+        addTodo,
+    });
 }
 
-export { TodoContext, TodoProvider };
+export { useTodos };
