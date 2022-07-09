@@ -8,3 +8,7 @@
 .counter {
     margin-inline-start: var(--metric-box-spacing);
 }
+
+.counter--loading {
+    opacity: 20%;
+}

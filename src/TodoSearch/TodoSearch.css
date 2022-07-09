@@ -11,3 +11,7 @@
     width: 100%;
     border: none;
 }
+
+.search__input:disabled {
+    opacity: 25%;
+}

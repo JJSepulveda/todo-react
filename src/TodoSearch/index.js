@@ -2,7 +2,7 @@ import React from "react";
 
 import "./TodoSearch.css"
 
-function TodoSearch({ searchValue, setSearchValue }) {
+function TodoSearch({ searchValue, setSearchValue, loading }) {
 
     // event es una variable de javascript que
     // almacena lo que hace el usuario.
@@ -19,7 +19,8 @@ function TodoSearch({ searchValue, setSearchValue }) {
                 placeholder='¿Qué buscas?'
                 value={searchValue}
                 className="search__input"
-                onChange={onSearchValueChange} />
+                onChange={onSearchValueChange}
+                disabled={loading} />
         </div>
     );
 }
