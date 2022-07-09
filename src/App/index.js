@@ -25,7 +25,7 @@ function App() {
   const {
     loading,
     error,
-    serachedTodos,
+    searchedTodos,
     completeTodos,
     deleteTodos,
     openModal,
@@ -49,23 +49,30 @@ function App() {
           setSearchValue={setSearchValue} />
       </TodoHeader>
 
-      <TodoList>
-        {loading && <TodoLoading />}
-        {error && <TodoError />}
-        {(!loading && !serachedTodos.length) && <EmptyTodo />}
+      <TodoList 
+        error={error}
+        loading={loading}
+        searchedTodos={searchedTodos}
+        totalTodos={totalTodos}
+        searchValue={searchValue}
+        onError={() => <TodoError />}
+        onLoading={() => <TodoLoading />}
+        onEmptyTodos={() => <EmptyTodo />}
+        onEmptySearchResults={(searchText) => <p className='info-text'>No hay resultados para: {searchText} </p>}
+        render={
+          searchedTodos.map(todo => (
+            <TodoItem
+              key={todo.text}
+              text={todo.text}
+              completed={todo.completed}
+              time={todo.time}
+              onComplete={() => completeTodos(todo.text)}
+              onDelete={() => deleteTodos(todo.text)}
+            />
+          ))
+        }
+      />
 
-        {serachedTodos.map(todo => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            time={todo.time}
-            onComplete={() => completeTodos(todo.text)}
-            onDelete={() => deleteTodos(todo.text)}
-          />
-        ))}
-      </TodoList>
-      
       {openModal && (
         <Modal>
           <TodoForm 
