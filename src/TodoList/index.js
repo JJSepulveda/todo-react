@@ -10,11 +10,11 @@ function TodoList(props) {
             {(!props.loading && !props.searchedTodos) && props.onEmptyTodos()}
             {(props.totalTodos && !props.searchedTodos.length) && props.onEmptySearchResults(props.searchValue)}
             <div>
-                { props.render } 
+                { (!props.loading && !props.error) && props.render } 
             </div>
             {/* En caso de que quiera enviar los componentes por la propieda children. */}
             <div>
-                { props.children } 
+                { (!props.loading && !props.error) && props.children } 
             </div>
         </section>
     );

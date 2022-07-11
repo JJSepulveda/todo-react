@@ -1,0 +1,36 @@
+.ChangeAlert-bg {
+    background: rgba(32,35,41,.8);
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 2;
+}
+
+.ChangeAlert__container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.ChangeAlert__p {
+    color: var(--clr-black);
+}
+
+.btn--primary {
+    border-radius: 10px;
+    background-color: var(--clr-orange);
+    color: white;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+}

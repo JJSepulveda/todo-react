@@ -13,6 +13,7 @@ function useTodos() {
         saveItem: saveTodos,
         loading,
         error,
+        sincronizeItem: sincronizeTodos
     } = useLocalStorage(STORAGE_NAME, []);
     const [searchValue, setSearchValue] = React.useState('');
     // estado del modal
@@ -83,7 +84,8 @@ function useTodos() {
         openModal,
         setOpenModal,
         addTodo,
+        sincronizeTodos
     });
 }
 
-export { useTodos };
+export { useTodos, STORAGE_NAME };
